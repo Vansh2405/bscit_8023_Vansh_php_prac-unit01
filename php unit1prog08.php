@@ -6,11 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <?php   
-        $num = array("panda","lion","tiger");
-        echo "Array is :". $num[0] . "</br>";
-        echo "Array is :". $num[1] . "</br>";
-        echo "Array is :". $num[2] . "</br>";
-    ?>
+   <?php
+    error_reporting(0);
+?>
+
+    <form method="get">
+            value 1:<input type="text" name="arr[]"><br><br>
+            value 2:<input type="text" name="arr[]"><br><br>
+            value 3:<input type="text" name="arr[]"><br><br>
+
+            <input type="submit" name="submit" value="submit">
+    </form>
+
+<?php
+    $arr = $_GET['arr'];
+
+    foreach ($arr as $value) {
+        echo $value . "<br>";
+    } 
+?>
 </body>
 </html>
